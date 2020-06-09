@@ -15,7 +15,7 @@ function checkPerumatation1(str1, str2) {
   }
 
 
-}//O(
+}//O(n log n)
 
 checkPerumatation1('dcba', 'abcd');
 
@@ -28,9 +28,33 @@ checkPerumatation1('dcba', 'abcd');
 /*
 Ways to Solve
 
-Method 1 - Sort the strings and then compare. O(n)
+Method 1 - Sort the strings and then compare. O(n log n)
 
-Method 2 - Store one string in a hash table and then compare 
+Method 2 - Store one string in a hash table and then compare.
+
+Method 3 - compare the char codes of each string
 
 */
+
+function checkPerumatation2(s1, s2){
+  let c1 = 0;
+  let c2 = 0;
+
+  for(let i = 0; i < s1.length; i++){
+    c1 += s1.charCodeAt(i);
+  }
+
+  for(let i = 0; i < s2.length; i++){
+    c2 += s2.charCodeAt(i);
+  }
+
+  if(c1 === c2){
+    return true;
+  }else{
+    return false
+  }
+  
+} //O(A + B)
+
+console.log(checkPerumatation2("abcd", "dcba"));
 

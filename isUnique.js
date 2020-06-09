@@ -22,7 +22,7 @@ console.log(isUnique("abcd"));
 //You could also sort the string and check if neighboring characters are identical.
 
 function isUnique1(s){
-  let s1 = s.split("");
+  let s1 = s.split("").sort();
   let next;
 
   for(let i = 0; i < s1.length; i++){
