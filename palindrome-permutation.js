@@ -66,7 +66,7 @@ function palindromeCheckEven(table){
 }
 
 function palindromePermutation(s) {
-  //do something
+  //Take spaces out of string.
   let str = s.toLowerCase().split(" ").join("");
   let result = isEven(str);
   let table = {};
@@ -85,3 +85,8 @@ function palindromePermutation(s) {
 }
 
 palindromePermutation(phrase);
+
+
+//Methods To Solve
+
+//Method 1 - Map chars to hashmap and check their char count.

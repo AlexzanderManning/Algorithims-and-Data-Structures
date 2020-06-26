@@ -32,7 +32,7 @@ Method 1 - Sort the strings and then compare. O(n log n)
 
 Method 2 - Store one string in a hash table and then compare.
 
-Method 3 - Compare the char codes of each string O(n)
+Method 3 - Compare the char codes of each string O(A + B)
 
 */
 

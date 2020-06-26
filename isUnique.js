@@ -35,4 +35,4 @@ function isUnique1(s){
   return true;
 }
 
-console.log(isUnique1('abccd'));
+console.log(isUnique1('abcda'));
