@@ -71,7 +71,7 @@ function palindromePermutation(s) {
   let result = isEven(str);
   let table = {};
 
-  //maps charcters and their character count to table
+  //maps characters and their character count to table
   for (let i = 0; i < str.length; i++) {
     if (!table[str[i]]) {
       table[str[i]] = 1;
