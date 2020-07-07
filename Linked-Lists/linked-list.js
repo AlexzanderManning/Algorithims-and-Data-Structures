@@ -7,9 +7,7 @@ class Node {
 
 class LinkedList {
   constructor(value) {
-    this.head = new Node(value), 
-    this.tail = this.head, 
-    this.length = 1;
+    (this.head = new Node(value)), (this.tail = this.head), (this.length = 1);
   }
 
   append(value) {
@@ -35,16 +33,6 @@ class LinkedList {
   shift() {
     this.head = this.head.next;
     this.length--;
-  }
-
-  printList() {
-    let node = this.head;
-    let values = [];
-    while (node) {
-      values.push(node.value);
-      node = node.next;
-    }
-    console.log(values);
   }
 
   insert(index, value) {
@@ -104,5 +92,35 @@ class LinkedList {
     }
     return currentNode;
   }
-}
 
+  printList() {
+    let node = this.head;
+    let values = [];
+    while (node) {
+      values.push(node.value);
+      node = node.next;
+    }
+    console.log(values);
+  }
+
+  reverse() {
+    //Reversing head and tail.
+    let current = this.head;
+    this.head = this.tail;
+    this.tail = current;
+    let prev = null;
+    let next;
+
+    //reassign pointers
+    while (current) {
+      //create next pointer
+      next = current.next;
+      //Assigns next to the value of the previous pointer
+      current.next = prev;
+      //Moves previous pointer to the current node.
+      prev = current;
+      //move to next node
+      current = next;
+    }
+  }
+}
