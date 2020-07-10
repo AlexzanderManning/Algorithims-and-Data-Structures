@@ -123,4 +123,26 @@ class LinkedList {
       current = next;
     }
   }
+
+  reverse2() {
+    //Reversing a linked list by storing values in an array and then reassigning values of linked list in reversed order.
+    let current = this.head;
+    let array = [];
+
+    while (current) {
+      array.push(current.value);
+      current = current.next;
+    }
+
+    current = this.head;
+
+    let length = array.length - 1;
+
+    //reassign pointers
+    while (current) {
+      current.value = array[length--];
+      //move to next node
+      current = current.next;
+    }
+  }
 }
