@@ -45,5 +45,5 @@ newArray.push('hi');
 newArray.push('there');
 newArray.push('you');
 newArray.push('!')
-newArray.delete(2);
+newArray.delete(1);
 console.log(newArray);

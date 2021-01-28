@@ -26,29 +26,43 @@ Ways to Solve
 
 Method 1 - Sort the strings and then compare. O(n log n)
 
-Method 2 - Store one string in a hash table and then compare.
-
-Method 3 - Compare the char codes of each string O(A + B)
+Method 2 - Store one string in a hash table and then see if the other string chars are there and check their counts.
 
 */
 
-function checkPerumatation2(s1, s2) {
-  let c1 = 0;
-  let c2 = 0;
+//O(S + B) - Linear Time
+function checkPermutation(s1, s2){
+//check if string
+//if strings are not same length SC
 
-  for (let i = 0; i < s1.length; i++) {
-    c1 += s1.charCodeAt(i);
+  let hash = {};
+
+  for(let i =0; i < s1.length; i++){
+    if(!hash[s1[i]]){
+      hash[s1[i]] = 1
+    }else if(hash[s1[i]]){
+      hash[s1[i]]++
+    }
   }
 
-  for (let i = 0; i < s2.length; i++) {
-    c2 += s2.charCodeAt(i);
-  }
+   console.log(hash);
 
-  if (c1 === c2) {
-    return true;
-  } else {
-    return false;
-  }
-} //O(A + B)
+ for(let i = 0; i < s2.length; i++){
+   let char = s2[i];
 
-console.log(checkPerumatation2("abcd", "dcba"));
+   if(!hash[char]){
+     return false;
+   }else if(hash[s2[i]]){
+     hash[s2[i]]--;
+   }
+ }
+
+ for(i in hash){
+   if(hash[i] != 0){
+     console.log("Not a perumtation!!");
+     return false;
+   }
+ }
+
+ return true;
+}
