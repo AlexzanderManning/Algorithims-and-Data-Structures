@@ -2,7 +2,8 @@
 
 function isUnique(s) {
   const set = {};
-  let str = s.split("");
+  let str = [...s];
+  console.log(str)
 
   for(let i = 0; i < str.length; i++) {
     if (str[i] in set) {
