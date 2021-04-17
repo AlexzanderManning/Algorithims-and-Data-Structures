@@ -1,38 +1,21 @@
-function checkPermutation(s1, s2){
-//check if string
-//if strings are not same length SC
-
+let findSumOfThree = function (arr, sum) {
+  // TODO: Write - Your - Code
+  let A = arr.sort();
   let hash = {};
+  let x;
 
-  for(let i =0; i < s1.length; i++){
-    if(!hash[s1[i]]){
-      hash[s1[i]] = 1
-    }else if(hash[s1[i]]){
-      hash[s1[i]]++
+  A.forEach((el) => (hash[el] = 1));
+  for (let i = 0; i < A.length; i++) {
+    for (let j = i + 1; j < A.length; j++) {
+      x = sum - (A[i] + A[j]);
+      console.log(`${x} = ${sum} - ${A[i]} + ${A[j]}`);
+      if (x != A[j] && hash[x]){
+        return true;
+      }
     }
   }
-
-   console.log(hash);
-
- for(let i = 0; i < s2.length; i++){
-   let char = s2[i];
-   
-   if(!hash[char]){
-     return false;
-   }else if(hash[s2[i]]){
-     hash[s2[i]]--;
-   }
- }
-
- for(i in hash){
-   if(hash[i] != 0){
-     console.log("Not a perumtation!!");
-     return false;
-   }
- }
-
- return true;
-}
+  return false;
+};
 
 
-checkPermutation('abc', 'bbb')
+console.log(findSumOfThree([1, 2, 3, 4, 5, 7, 8], 21));

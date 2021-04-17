@@ -47,15 +47,17 @@ function insertionSortB(A) {
     let i = j - 1;
 
     while (i >= 0 && A[i] < key) {
-      //Swap values
+      //Swap values 
       A[i + 1] = A[i];
       A[i] = key;
       //Back up i one spot
       i = i - 1;
-    }
+    } b
   }
 
   return A;
 }
 
 console.log(insertionSortB([1, 4, 5, 2, 3]));
+
+console.log({}.length)
